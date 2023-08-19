@@ -6,7 +6,6 @@ from threading import Thread
 from time import sleep
 from typing import Dict
 from typing import List
-import openai
 import torch
 from dotenv import load_dotenv
 from flask import Flask
