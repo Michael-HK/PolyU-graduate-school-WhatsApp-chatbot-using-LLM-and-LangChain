@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+langchain
+einops
+accelerate
+transformers
+bitsandbytes
+scipy
+xformers 
+sentencepiece
+lama-index==0.7.21
+llama_hub==0.0.19
+flask
+twilio
