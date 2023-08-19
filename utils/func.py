@@ -70,6 +70,7 @@ def llm_query():
 
     service_context = ServiceContext.from_defaults(
         chunk_size=1024,
+        chunk_overlap=20,
         llm=llm,
         embed_model=embeddings
     )
