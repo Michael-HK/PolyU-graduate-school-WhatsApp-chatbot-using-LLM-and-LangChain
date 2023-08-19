@@ -51,9 +51,9 @@ def generate_reply(incoming_message: str, sender_contact: str, receiver_contact:
     if text_message == "hi" or text_message == "how are you" or text_message == "hey":
        # Return a default message
         return (
-            'Hi there! I am Sequi, Ask me any question related to PolyU Taught Programmes \n'
-          'Either you are prospective student or current student \n\n'
-          'NB: Please avoid asking unrelated question as I will not be of help \n'
+            'Hi there! I am Sequi, Ask me any questions related to PolyU Taught Programmes \n'
+          'Whether you are a prospective student or a current student \n\n'
+          'NB: Please avoid asking unrelated questions as I will not be of help \n'
         )
     else:
         response = llama_query.query(text_message)
@@ -73,7 +73,7 @@ def generate_reply(incoming_message: str, sender_contact: str, receiver_contact:
 @app.route("/")
 def hello_world() -> str:
     """Information message"""
-    return "WhatsApp bot for PolyU Admission and Academic enquires"
+    return "WhatsApp chatbot for PolyU Admission and Academic enquires"
 
 @app.route("/text", methods=["POST"])
 def text_reply() -> str:
@@ -92,5 +92,5 @@ if __name__ == "__main__":
     
     #load the model at the instance of launching the endpoint
     tokenizer, model = get_tokenizer_model()
-    llama_query = llm_query()
+    llama_query = llm_query(tokenizer, model)
     app.run(debug=False, host="0.0.0.0", port=port)
