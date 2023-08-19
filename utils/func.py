@@ -33,7 +33,7 @@ def get_tokenizer_model():
                             rope_scaling={"type": "dynamic", "factor": 2}, load_in_8bit=True) 
 
     return tokenizer, model
-tokenizer, model = get_tokenizer_model()
+tokenizer, model = get_tokenizer_model(tokenizer, model)
 
 def llm_query():
     # Create a system prompt 
