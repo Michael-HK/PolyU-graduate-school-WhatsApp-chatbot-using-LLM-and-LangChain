@@ -49,7 +49,7 @@ def generate_reply(incoming_message: str, sender_contact: str, receiver_contact:
     """
     text_message = incoming_message.lower()
     #if ["hi", "how are you", "hey"] in text_message:
-    if text_message == "hi" or text_message == "how are you" or text_message == "hey"
+    if text_message == "hi" or text_message == "how are you" or text_message == "hey":
        # Return a default message
         return (
             'Hi there! I am Sequi, Ask me any question related to PolyU Taught Programmes \n'
