@@ -23,7 +23,7 @@ load_dotenv()
 
 auth_token = os.environ["HUGGING_FACE_API_KEY"]
  
-def get_tokenizer_model():
+def get_tokenizer_model(name, auth_token):
     # Create tokenizer
     tokenizer = AutoTokenizer.from_pretrained(name, cache_dir='./model/', use_auth_token=auth_token)
 
@@ -35,7 +35,7 @@ def get_tokenizer_model():
     return tokenizer, model
 tokenizer, model = get_tokenizer_model(tokenizer, model)
 
-def llm_query():
+def llm_query(tokenizer, model):
     # Create a system prompt 
     system_prompt = """<s>[INST] <<SYS>>
     You are a helpful, respectful and honest assistant. Always answer as 
