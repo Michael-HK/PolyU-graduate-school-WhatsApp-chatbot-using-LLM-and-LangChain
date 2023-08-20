@@ -60,7 +60,7 @@ def generate_reply(incoming_message: str, sender_contact: str, receiver_contact:
         # format for better whatsapp view
         text_body = format_activities_text(response)
   
-    # spliting the text to avoid whatsApp character limit
+    # Spliting the text to avoid WhatsApp character limit
     # Divide output into 1500 character chunks due to WhatsApp character limit of 1600 chars
     if len(text_body) > 1600:
         text_body = [text_body[i : i + 1500] for i in range(0, len(text_body), 1500)]
@@ -91,6 +91,6 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     
     #load the model at the instance of launching the endpoint
-    tokenizer, model = get_tokenizer_model()
+    tokenizer, model = get_tokenizer_model(name, auth_token)
     llama_query = llm_query(tokenizer, model)
     app.run(debug=False, host="0.0.0.0", port=port)
