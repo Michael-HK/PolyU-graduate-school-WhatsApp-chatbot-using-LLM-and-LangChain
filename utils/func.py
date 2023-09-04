@@ -76,7 +76,7 @@ def llm_query(tokenizer, model):
     )
   
     #set the service context
-    set_global_service_context(service_context)
+    #set_global_service_context(service_context)
 
     # Download PDF Loader 
     PyMuPDFReader = download_loader("PyMuPDFReader")
@@ -86,7 +86,7 @@ def llm_query(tokenizer, model):
     documents = loader.load(file_path=Path('./data/PolyU_StudentHandbook.pdf'), metadata=True)
 
     # Create an index
-    index = VectorStoreIndex.from_documents(documents)
+    index = VectorStoreIndex.from_documents(documents, service_context=service_context)
     # Setup index query engine using LLM 
     query_engine = index.as_query_engine()
     return query_engine
